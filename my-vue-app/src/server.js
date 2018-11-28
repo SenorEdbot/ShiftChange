@@ -35,16 +35,26 @@ app.use((req, res, next) => {
 
 // For ease of this tutorial, we are going to use SQLite to limit dependencies
 let database = new Sequelize({
-  dialect: 'sqlite',
-  storage: './test.sqlite'
+  username: "root",
+  password: "edbot",
+  database: "shiftChange_db",
+  host: "localhost",
+  dialect: "mysql"
 })
 
+const DataTypes = Sequelize.DataTypes;
 // Define our Post model
 // id, createdAt, and updatedAt are added by sequelize automatically
-let Post = database.define('posts', {
-  title: Sequelize.STRING,
-  body: Sequelize.TEXT
-})
+let Posts = database.define('Shifts', {
+  name: DataTypes.STRING,
+  reason: DataTypes.STRING,
+  date: DataTypes.DATE,
+  duration: DataTypes.DECIMAL,
+  role: DataTypes.STRING,
+  covered: DataTypes.BOOLEAN,
+  priority: DataTypes.STRING,
+  personResponsible: DataTypes.STRING
+});
 
 // Initialize epilogue
 epilogue.initialize({
@@ -54,7 +64,7 @@ epilogue.initialize({
 
 // Create the dynamic REST resource for our Post model
 let userResource = epilogue.resource({
-  model: Post,
+  model: Posts,
   endpoints: ['/posts', '/posts/:id']
 })
 
@@ -66,3 +76,5 @@ database
       console.log('listening to port localhost:8081')
     })
   })
+
+
