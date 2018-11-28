@@ -8,8 +8,14 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Title</th>
-              <th>Updated At</th>
+              <th>Name</th>
+              <th>Reason</th>
+              <th>Date</th>
+              <th>Duration</th>
+              <th>Role</th>
+              <th>Covered</th>
+              <th>Priority</th>
+              <th>Person Responsible</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
@@ -17,7 +23,13 @@
             <tr v-for="post in posts" :key="post.id">
               <td>{{ post.id }}</td>
               <td>{{ post.name }}</td>
-              <td>{{ post.updatedAt }}</td>
+              <td>{{ post.reason }}</td>
+              <td>{{ post.date }}</td>
+              <td>{{ post.duration }}</td>
+              <td>{{ post.role }}</td>
+              <td>{{ post.covered }}</td>
+              <td>{{ post.priority }}</td>
+              <td>{{ post.personResponsible }}</td>
               <td class="text-right">
                 <a href="#" @click.prevent="populatePostToEdit(post)">Edit</a> -
                 <a href="#" @click.prevent="deletePost(post.id)">Delete</a>
