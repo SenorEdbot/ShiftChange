@@ -7,10 +7,15 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Employee #</th>
+              <th>ID</th>
               <th>Name</th>
               <th>Reason</th>
-              <th>updatedAt</th>
+              <th>Date</th>
+              <th>Duration</th>
+              <th>Role</th>
+              <th>Covered</th>
+              <th>Priority</th>
+              <th>Person Responsible</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
@@ -19,7 +24,12 @@
               <td>{{ post.id }}</td>
               <td>{{ post.name }}</td>
               <td>{{ post.reason }}</td>
-              <td>{{ post.updatedAt }}</td>
+              <td>{{ post.date }}</td>
+              <td>{{ post.duration }}</td>
+              <td>{{ post.role }}</td>
+              <td>{{ post.covered }}</td>
+              <td>{{ post.priority }}</td>
+              <td>{{ post.personResponsible }}</td>
               <td class="text-right">
                 <a href="#" @click.prevent="populatePostToEdit(post)">Edit</a> -
                 <a href="#" @click.prevent="deletePost(post.id)">Delete</a>
@@ -28,7 +38,9 @@
           </tbody>
         </table>
       </b-col>
-      <b-col lg="3">
+    </b-row>
+    <b-row>
+       <b-col>
         <b-card :title="(model.id ? 'Edit Post ID#' + model.id : 'Get Your Shift Covered')">
           <form @submit.prevent="savePost">
             <b-form-group label="Title">
@@ -44,6 +56,7 @@
         </b-card>
       </b-col>
     </b-row>
+    
   </div>
 </template>
 
