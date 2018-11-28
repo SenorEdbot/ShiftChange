@@ -7,9 +7,10 @@
         <table class="table table-striped">
           <thead>
             <tr>
+              <th>Employee #</th>
               <th>Name</th>
-              <th>Title</th>
-              <th>Shift</th>
+              <th>Reason</th>
+              <th>updatedAt</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
@@ -17,6 +18,7 @@
             <tr v-for="post in posts" :key="post.id">
               <td>{{ post.id }}</td>
               <td>{{ post.name }}</td>
+              <td>{{ post.reason }}</td>
               <td>{{ post.updatedAt }}</td>
               <td class="text-right">
                 <a href="#" @click.prevent="populatePostToEdit(post)">Edit</a> -
