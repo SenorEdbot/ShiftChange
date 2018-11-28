@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "name": "shiftchange",
   "short_name": "sc",
+=======
+  "name": "my-vue-app",
+  "short_name": "my-vue-app",
+>>>>>>> 330e88602ea196d4466ae3932d857e5e8cb3e69d
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
