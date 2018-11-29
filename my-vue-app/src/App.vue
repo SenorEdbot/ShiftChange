@@ -3,7 +3,6 @@
     <b-navbar toggleable="md" type="dark" variant="dark">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-navbar-brand to="/">Shift Change</b-navbar-brand>
-      <img id="logo" src="./assets/shift-change-logo-only.png">
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
           <b-nav-item to="/">Home</b-nav-item>
