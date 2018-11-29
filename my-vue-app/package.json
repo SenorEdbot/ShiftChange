@@ -21,7 +21,6 @@
     "bootstrap-vue": "^2.0.0-rc.7",
     "cors": "^2.8.4",
     "epilogue": "^0.7.1",
-    "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "sequelize": "^4.37.6",
     "sqlite3": "^4.0.4",
