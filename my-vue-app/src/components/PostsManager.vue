@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid mt-4">
-    <h1 class="h1">Posts Manager</h1>
+    <h1 class="h1">Available Shifts</h1>
     <b-alert :show="loading" variant="info">Loading...</b-alert>
     <b-row>
       <b-col>
@@ -38,8 +38,10 @@
           </tbody>
         </table>
       </b-col>
-      <b-col lg="3">
-        <b-card :title="(model.id ? 'Edit Post ID#' + model.id : 'New Post')">
+    </b-row>
+    <b-row>
+       <b-col>
+        <b-card :title="(model.id ? 'Edit Post ID#' + model.id : 'Get Your Shift Covered')">
           <form @submit.prevent="savePost">
             <b-form-group label="Title">
               <b-form-input type="text" v-model="model.name"></b-form-input>
@@ -48,12 +50,13 @@
               <b-form-textarea rows="4" v-model="model.reason"></b-form-textarea>
             </b-form-group>
             <div>
-              <b-btn type="submit" variant="success">Save Post</b-btn>
+              <b-btn type="submit" variant="success">Post Shift</b-btn>
             </div>
           </form>
         </b-card>
       </b-col>
     </b-row>
+    
   </div>
 </template>
 

@@ -36,9 +36,9 @@ app.use((req, res, next) => {
 // For ease of this tutorial, we are going to use SQLite to limit dependencies
 let database = new Sequelize({
   username: "root",
-  password: "edbot",
+  password: "root",
   database: "shiftChange_db",
-  host: "localhost",
+  host: "127.0.0.1",
   dialect: "mysql"
 })
 

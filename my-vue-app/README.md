@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+# shiftchange
+
+> project 2
+=======
 # my-vue-app
 
 > A Vue.js project
+>>>>>>> 330e88602ea196d4466ae3932d857e5e8cb3e69d
 
 ## Build Setup
 
