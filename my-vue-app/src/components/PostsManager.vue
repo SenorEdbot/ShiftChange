@@ -41,13 +41,30 @@
     </b-row>
     <b-row>
        <b-col>
+          <!-- If there is a model.id then it will display Edit Post ID, if not it will display Get your shift covered -->
         <b-card :title="(model.id ? 'Edit Post ID#' + model.id : 'Get Your Shift Covered')">
           <form @submit.prevent="savePost">
-            <b-form-group label="Title">
+            <b-form-group label="Name">
               <b-form-input type="text" v-model="model.name"></b-form-input>
             </b-form-group>
-            <b-form-group label="Body">
-              <b-form-textarea rows="4" v-model="model.reason"></b-form-textarea>
+            <b-form-group label="Reason">
+              <b-form-input type="text" v-model="model.reason"></b-form-input>
+            </b-form-group>
+            <b-form-group label="Date">
+              <b-form-input type="date" v-model="model.date"></b-form-input>
+            </b-form-group>
+            <b-form-group label="Duration">
+              <b-form-input type="number" v-model="model.duration"></b-form-input>
+            </b-form-group>
+            <b-form-group label="Role">
+              <b-form-input type="text" v-model="model.role"></b-form-input>
+            </b-form-group>
+            <b-form-group label="Priority">
+              <b-form-radio-group id="radioPriority" v-model="model.priority" name="priority">
+                <b-form-radio value="low">Low</b-form-radio>
+                <b-form-radio value="high">High</b-form-radio>
+                <b-form-radio value="urgent">Urgent</b-form-radio>
+              </b-form-radio-group>
             </b-form-group>
             <div>
               <b-btn type="submit" variant="success">Post Shift</b-btn>
@@ -86,6 +103,8 @@ export default {
       if (this.model.id) {
         await api.updatePost(this.model.id, this.model)
       } else {
+        this.model.covered = false
+        this.model.personResponsible = this.model.name
         await api.createPost(this.model)
       }
       this.model = {} // reset form
