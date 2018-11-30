@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid mt-4">
-    <h1 class="h1">Available Shifts</h1>
+    <h1 class="h1 header"><span class="green-title">Available</span> Shifts</h1>
     <b-alert :show="loading" variant="info">Loading...</b-alert>
     <b-row>
       <b-col>
@@ -21,6 +21,7 @@
           </thead>
           <tbody>
             <tr v-for="post in posts" :key="post.id">
+              <!-- <td><img src="./assets/SC-blk-favicon.png"></td> -->
               <td>{{ post.id }}</td>
               <td>{{ post.name }}</td>
               <td>{{ post.reason }}</td>
@@ -76,6 +77,13 @@
     
   </div>
 </template>
+
+<style>
+form {
+  color:darkslategrey;
+}
+</style>
+
 
 <script>
 import api from '@/api'

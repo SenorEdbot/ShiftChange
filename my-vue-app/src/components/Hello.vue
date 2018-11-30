@@ -1,33 +1,7 @@
 <template>
   <div class="hero">
-    <div>
-      <h1 class="display-3">Hello World</h1>
-      <p class="lead">This is the homepage of your vue app</p>
-      <b-row>
-        <b-col>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Updated At</th>
-                <th>&nbsp;</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="post in posts" :key="post.id">
-                <td>{{ post.id }}</td>
-                <td>{{ post.name }}</td>
-                <td>{{ post.updatedAt }}</td>
-                <td class="text-right">
-                  <a href="#" @click.prevent="populatePostToEdit(post)">Edit</a> -
-                  <a href="#" @click.prevent="deletePost(post.id)">Delete</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </b-col>
-      </b-row>
+    <div class="container-fluid mt-4">
+      <h1 class="display-3 header"><span class="green-title">Avalible</span> Shifts</h1>
     </div>
   </div>
 </template>
@@ -39,6 +13,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+  .header {
+    font-family: 'Coda Caption', sans-serif;
+    font-style: italic;
+  }
+  .green-title {
+    color: lime;
   }
   .hero .lead {
     font-weight: 200;

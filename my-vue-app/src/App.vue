@@ -2,7 +2,7 @@
   <div id="app">
     <b-navbar toggleable="md" type="dark" variant="dark">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand to="/">Shift Change</b-navbar-brand>
+      <b-navbar-brand to="/"><img id="logo" src="./assets/shift-change-logo-only.png"></b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
           <b-nav-item to="/">Home</b-nav-item>
@@ -50,8 +50,20 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Coda+Caption:800');
 body {
   margin: 0;
+  background-color: #35495E;
+
+}
+body::after {
+  content:"";
+  background-image: url("./assets/shift-change-transparent.png");
+  opacity: 0.5;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #logo {
@@ -62,7 +74,7 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: white;
 }
 
 main {
